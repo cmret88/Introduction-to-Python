@@ -119,3 +119,133 @@ house = [["hallway", 11.25],
 # the first bracket refers to the list within the larger list, the second brackets refers to the elements within that list that is within the larger list
 house[-1][1]
 9.5
+
+# List Manipulation
+# Changing list elements
+fam = ['liz',1.73,'emma',1.68,'mom',1.71,'dad',1.89]
+fam[7] = 1.86
+fam
+# output is ['liz',1.73,'emma',1.68,'mom',1.71,'dad',1.86]
+# 1.89 is changed to 1.86
+
+fam[0:2] = ['lisa',1.74]
+fam
+# output is ['lisa',1.74,'emma',1.68,'mom',1.71,'dad',1.86]
+# first two elements [0:2] were changed
+
+# Adding and removing elements
+fam + ['me',1.79]
+# ['lisa',1.74,'emma',1.68,'mom',1.71,'dad',1.86, 'me', 1.79]
+fam_ext = fam + ['me', 1.79]
+del fam[2]
+# deletes 'emma' from list
+
+# Behind the Scenes
+x = ['a','b','c']
+# you're storing your list in your computer memory and store the 'address' of that list in x
+# x does not contain list elements, rather, it contains a reference to the list
+# make a copy of the list x and call it y
+y=x
+# change an element in the y list (a copy of x)
+y[1] = 'z'
+y
+['a','z','c']
+# notice that the element also changes in x. why?
+x
+['a','z','c']
+# because when you copy x to y, you copy the reference of this, not the actual value itself
+# when you're updating an element in the list, it is one in the same list in the computer memory you are changing
+# both x and y point to this list, so the update is visible from both variables
+# if you want to create a list y that points to a new list in the memory with the same values, you need to use something other than the = sign
+# you can use the list function
+x = ['a','b','c']
+y = list(x)
+# or use a slice function to select all elements explicitly
+# if we now make a change to the list y points to, x is not affected
+y=x[:]
+y[1]='z'
+x
+# outputs ['a','b','c']
+
+# RECAP
+# to replace list elements, you subset the list and assign new values to the subset
+# you can select single elements or you can change entire list slices at once
+# Create the areas list
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+# Correct the bathroom area
+areas[-1]=10.50
+print(areas)
+
+# Change "living room" to "chill zone"
+areas[4]="chill zone"
+print(areas)
+['hallway', 11.25, 'kitchen', 18.0, 'living room', 20.0, 'bedroom', 10.75, 'bathroom', 10.5]
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5]
+
+# Extending a list
+# use the + operator
+# Create the areas list and make some changes
+areas = ["hallway", 11.25, "kitchen", 18.0, "chill zone", 20.0,
+         "bedroom", 10.75, "bathroom", 10.50]
+
+# Add poolhouse data to areas, new list is areas_1
+areas_1 = areas + ["poolhouse",24.5]
+
+# Add garage data to areas_1, new list is areas_2
+areas_2 = areas_1 + ["garage",15.45]
+print(areas_1)
+print(areas_2)
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5, 'poolhouse', 24.5]
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5, 'poolhouse', 24.5, 'garage', 15.45]
+
+# Deleting list elements
+# use the del statement
+# when you remove an element from a list, the indexes of the elements that come after the deleted element all change
+areas = ["hallway", 11.25, "kitchen", 18.0,
+        "chill zone", 20.0, "bedroom", 10.75,
+         "bathroom", 10.50, "poolhouse", 24.5,
+         "garage", 15.45]
+
+# Delete the poolhouse items from the list
+del areas[10:12]
+
+# Print the updated list
+print(areas)
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5, 'garage', 15.45]
+
+# Inner workings of lists
+# in this example, areas and areas_copy both point to the same list
+# therefore, when an element in one changes, the same element in the other changes as well
+# if we want to prevent changes in areas_copy from also taking effect in areas, we will have to do a more explicit copy of the areas list with list() or by using [:]
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Change this command
+areas_copy = list(areas)
+# Change areas_copy
+areas_copy[0] = 5.0
+# Print areas
+print(areas)
+print(areas_copy)
+[11.25, 18.0, 20.0, 10.75, 9.5]
+[5.0, 18.0, 20.0, 10.75, 9.5]
+
+# Functions
+# type() returns a type of a value
+# a piece of reusable code aimed at a particular task
+fam = [1.73, 1.68, 1.71, 1.89]
+max(fam)
+# output is 1.89
+tallest = max(fam)
+
+# round()
+round(1.68,1)
+# 1.7
+round(1.68)
+# 2
+# ndigits is an optional argument
+
+# help()
+
+
