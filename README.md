@@ -248,4 +248,84 @@ round(1.68)
 
 # help()
 
+# Create variables var1 and var2
+var1 = [1, 2, 3, 4]
+var2 = True
+
+# Print out type of var1
+type(var1)
+# says its a list
+
+# Print out length of var1
+len(var1)
+# says the length is 4
+
+# Convert var2 to an integer: out2
+out2 = int(var2)
+print(out2)
+# says that 'True' is now an integer
+
+?sorted
+Signature: sorted(iterable, /, *, key=None, reverse=False)
+Docstring:
+Return a new list containing all items from the iterable in ascending order.
+
+A custom key function can be supplied to customize the sort order, and the
+reverse flag can be set to request the result in descending order.
+Type:      builtin_function_or_method
+
+# Create lists first and second
+first = [11.25, 18.0, 20.0]
+second = [10.75, 9.50]
+
+# Paste together first and second: full
+full = first + second
+
+# Sort full in descending order: full_sorted
+full_sorted = sorted(full, reverse = True)
+
+# Print out full_sorted
+print(full_sorted)
+[20.0, 18.0, 11.25, 10.75, 9.5]
+
+# Methods
+# all types are objects
+# a str, float, and list are all objects
+# methods are functions that belong to objects
+fam.index('mom') # 'call method index() on fam'
+# python returns 4
+fam = ['liz',1.73,'emma',1.68,'mom',1.71,'dad',1.89]
+fam.count(1.73)
+# python returns 1
+
+# lists are not the only python objects that have methods associated
+# str methods
+# capitalize() returns a string where the first letter is capitalized now
+sister
+'liz'
+sister.capitalize()
+'Liz'
+
+# replacing a string
+sister.replace('z','sa')
+'lisa'
+
+# Method
+# everything = object
+# objects have methods associated, depending on type
+# for example, strings have replace methods, but a list does not
+# index method is available in string and list types
+# some methods can change the objects they are called on
+fam = ['liz',1.73,'emma',1.68,'mom',1.71,'dad',1.89]
+fam.append('me')
+['liz',1.73,'emma',1.68,'mom',1.71,'dad',1.89,'me']
+fam.append(1.79)
+['liz',1.73,'emma',1.68,'mom',1.71,'dad',1.89,'me', 1.79]
+
+# Summary
+type(fam)
+# returns list
+# methods: call functions on objects
+fam.index('dad')
+# returns 6
 
