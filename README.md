@@ -347,3 +347,155 @@ POOLHOUSE
 # Print out the number of o's in place
 print(place.count('o'))
 3
+
+# List Methods
+# .index() method gets the index of the element in a list
+# .count() methods gets the count of how many times an element appears in a list
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Print out the index of the element 20.0
+print(areas.index(20.0))
+
+# Print out how often 9.50 appears in areas
+print(areas.count(9.50))
+2
+1
+
+# More List Methods
+# .append() adds an element to the list it is called on
+# .remove() removes the first element of a list that matches the input, and
+# .reverse() reverses the order of the lements in the list it is called on
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Use append twice to add poolhouse and garage size
+areas.append(24.5)
+areas.append(15.45)
+
+# Print out areas
+print(areas)
+
+# Reverse the orders of the elements in areas
+areas.reverse()
+
+# Print out areas
+print(areas)
+[11.25, 18.0, 20.0, 10.75, 9.5, 24.5, 15.45]
+[15.45, 24.5, 9.5, 10.75, 20.0, 18.0, 11.25]
+
+# Packages
+# functions and methods are powerful
+# all code in Python distribution -> that would lead to a huge messy code base
+# this is where packages come in
+# Packages are a directory of python scripts
+# each script = module
+# packages specify functions, methods, types
+# thousands of packages available such as NumPy and Matplotlib
+
+# you must install packages first
+# download get-pip.py
+# terminal: python3 get-pip.py
+
+# Import Package
+import numpy
+array([1,2,3])
+numpy.array([1,2,3)]
+# arrays have parenthesis around square brackets
+# lists contain brackets only
+
+# if you want, you can just select a particular function from a package
+from numpy import array
+array([1,2,3])
+# but this can cause confusion especially if you are working in groups
+# the standard is the following:
+import numpy as np
+np.array([1,2,3])
+
+# Practice importing a package
+# Import the math package
+import math
+
+# Calculate C
+C = 2 * 0.43 * math.pi
+
+# Calculate A
+A = math.pi * 0.43 ** 2
+
+print("Circumference: " + str(C))
+print("Area: " + str(A))
+Circumference: 2.701769682087222
+Area: 0.5808804816487527
+
+# selective importing
+# Import pi function of math package
+from math import pi
+
+# Calculate C
+C = 2 * 0.43 * pi
+
+# Calculate A
+A = pi * 0.43 ** 2
+
+print("Circumference: " + str(C))
+print("Area: " + str(A))
+Circumference: 2.701769682087222
+Area: 0.5808804816487527
+
+# there are many ways to import packages and modules into Python
+# depending on the import call, you'll have to use different Python code
+# for ex., if you want to use the function inv(), which is in the linalg subpackage of the scipy package. You want to be able to use this function as follows:
+from scipy.linalg import inv as my_inv
+# ^ this allows you to use my_inv([[1,2], [3,4]])
+
+# Lists Recap
+# powerful
+# collection of values
+# holds different types
+# change, add, remove
+# need for data science though
+# python cannot do calculations on lists
+# the solution is NumPy
+
+# NumPy
+# numeric python
+# alternative to python list: NumPy Array
+# calculations over entire arrays
+# easy and fast
+# installation: pip3 install numpy
+
+# turning the height list into an array
+import numpy as np
+np_height = np.array(height)
+np_height
+array([1.73, 1.68, 1.71, 1.89, 1.79)]
+# turning the weight list into an array
+np_weight = np.array(weight)
+array([65.4, 59.2, 63.6, 88.4, 68.7])
+bmi = np_weight/np_height ** 2
+bmi
+array([21.851, 20.975, 21.750, 24.747, 21.441])
+
+# unlike lists, NumPy arrays only contain one data type
+# some remarks
+# different types will lead to different behaviors
+python_list = [1,2,3]
+numpy_array = np.array([1,2,3)]
+python_list + python_list
+[1,2,3,1,2,3]
+numpy_array + numpy_array
+array([2,4,6])
+
+# NumPy subsetting
+bmi
+array([21.851, 20.975, 21.750, 24.747, 21.441])
+bmi[1]
+20.975
+bmi > 23
+array([False, False, False, True, False)]
+
+# you can use this boolean array inside square brackets to do subsetting
+# this creates a new array consisting of original elements, not True/False boolean elements
+bmi[bmi > 23]
+array([24.747])
+
