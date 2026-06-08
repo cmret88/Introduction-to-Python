@@ -499,3 +499,59 @@ array([False, False, False, True, False)]
 bmi[bmi > 23]
 array([24.747])
 
+# Import the numpy package as np
+import numpy as np
+baseball = [180, 215, 210, 210, 188, 176, 209, 200]
+
+# Create a numpy array from baseball: np_baseball
+np_baseball = np.array(baseball)
+
+# Print out type of np_baseball
+print(type(np_baseball))
+<class 'numpy.ndarray'>
+
+# note that for lists, there are commas separating each value
+# there are no commas separating values in numpy arrays
+print(baseball)
+print(np_baseball)
+[180, 215, 210, 210, 188, 176, 209, 200]
+[180 215 210 210 188 176 209 200]
+
+# Import numpy
+import numpy as np
+
+# Create a numpy array from height_in: np_height_in
+np_height_in = np.array(height_in)
+
+# Print out np_height_in
+print(np_height_in)
+
+# Convert np_height_in to m: np_height_m
+np_height_m = np_height_in * 0.0254
+
+# Print np_height_m
+print(np_height_m)
+[74 74 72 ... 75 75 73]
+[1.8796 1.8796 1.8288 ... 1.905  1.905  1.8542]
+
+# numpy is great for doing vector arithmetic
+# if you try to mix types in numpy arrays, like booleans and integers, numpy converts them to a common type
+# Booleans like True and False are treated as 1 and 0 when combined with numbers, so the arrays ends up as integers
+# also, arithmetic operators such as +, -, * and / have a different meaning for regular Python lists and numpy arrays
+
+# subsetting numpy arrays
+# subsetting (using [] notation on lists or arrays) works exactly the same with both lists and arrays
+import numpy as np
+
+np_weight_lb = np.array(weight_lb)
+np_height_in = np.array(height_in)
+
+# Print out the weight at index 50
+print(np_weight_lb[50])
+
+# Print out sub-array of np_height_in: index 100 up to and including index 110
+print(np_height_in[100:111])
+200
+[73 74 72 73 69 72 73 75 75 73 72]
+
+# 2D NumPy Arrays
