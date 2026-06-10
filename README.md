@@ -606,4 +606,8 @@ np_2d[0,2]
          0     1     2     3     4
 array([[1.73, 1.68, 1.71, 1.89, 1.79],    0
        [65.4, 59.2, 63.6, 88.4, 68.7]])   1
-:56 mark
+
+# if you only want the second and third columns, put in indices 1 to 3 after the comma:
+np_2d[:, 1:3]
+array([[1.68, 1.71],
+       [59.2, 63.6]])
