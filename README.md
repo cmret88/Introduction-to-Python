@@ -566,6 +566,43 @@ type(np_weight)
 # the arrays np_height and np_weight are 1D arrays, but you can create 2D, 3D, 4D etc arrays
 
 # 2D NumPy Arrays
-np_2d = np.array([[1.73, 1.68, 1.71, 1.89, 1.79], [65.4, 59.2, 63.6, 88.4, 68.7]])
+np_2d = np.array([[1.73, 1.68, 1.71, 1.89, 1.79], 
+                  [65.4, 59.2, 63.6, 88.4, 68.7]])
 np_2d
-# ^result will be 'array([[1.73, 1.68, 1.71, 1.89, 1.79], [65.4, 59.2, 63.6, 88.4, 68.7]])'
+# ^result will be 'array([[1.73, 1.68, 1.71, 1.89, 1.79], 
+                          [65.4, 59.2, 63.6, 88.4, 68.7]])'
+
+np_2d.shape
+(2, 5) # 2 rows, 5 columns
+# shape is the so-called attribute of the np2d array, that can give you info of what the data structure looks like
+# note that the syntax for accessing an attribute looks a bit like calling a method, but they are NOT the same
+# recall that methods have round brackets after them, attributes do not
+
+# for 2D arrays, the NumPy rule applies: an array can only contain a single type!
+# if you change the type of one, all the other elements will become that type now
+# you can think of a 2D NumPy array as an improved list of lists
+
+# Subsetting 2D NumPy Arrays
+         0     1     2     3     4
+array([[1.73, 1.68, 1.71, 1.89, 1.79],    0
+       [65.4, 59.2, 63.6, 88.4, 68.7]])   1
+
+# to select an entire row:
+np_2d[0]
+array([1.73, 1.68, 1.71, 1.89, 1.79])
+
+# to select a specific element, select the row and then the column in that row:
+np_2d[0][2]
+1.71
+
+# another way to subset to get the same value as the one above:
+np_2d[0,2]
+1.71
+# the value before the comma specifies the row
+# the value after the comma specifies the column
+# the intersection is returned
+
+# using the height and weight example
+         0     1     2     3     4
+array([[1.73, 1.68, 1.71, 1.89, 1.79],    0
+       [65.4, 59.2, 63.6, 88.4, 68.7]])   1
