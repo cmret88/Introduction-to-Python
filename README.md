@@ -555,3 +555,17 @@ print(np_height_in[100:111])
 [73 74 72 73 69 72 73 75 75 73 72]
 
 # 2D NumPy Arrays
+# type of NumPy Arrays
+import numpy as np
+np_height = np.array([1.73, 1.68, 1.71, 1.89, 1.79)]
+np_weight = np.array([65.4, 59.2, 63.6, 88.4, 68.7])
+type(np_height)
+# ^result will be 'numpy.ndarray'
+type(np_weight)
+# ^result numpy.ndarray
+# the arrays np_height and np_weight are 1D arrays, but you can create 2D, 3D, 4D etc arrays
+
+# 2D NumPy Arrays
+np_2d = np.array([[1.73, 1.68, 1.71, 1.89, 1.79], [65.4, 59.2, 63.6, 88.4, 68.7]])
+np_2d
+# ^result will be 'array([[1.73, 1.68, 1.71, 1.89, 1.79], [65.4, 59.2, 63.6, 88.4, 68.7]])'
