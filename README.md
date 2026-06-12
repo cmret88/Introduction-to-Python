@@ -680,3 +680,102 @@ print(np_weight_lb_2)
     np_weight_lb_2 = (np_baseball[,1])
                                   ^
 SyntaxError: invalid syntax
+
+# this is because that when the comma is ommitted, rows are assumed. it doesn't work the other way. once you introduce the comma, you must provide instructions for both directions
+
+# 2D Arithmetic
+# 2D numpy arrays can perform calculations element by element like numpy arrays
+import numpy as np
+
+np_baseball = np.array(baseball)
+
+# Print out addition of np_baseball and updated
+(np_baseball) + (updated)
+print(np_baseball + updated)
+
+# Create numpy array: conversion
+conversion = [0.0254, 0.453592, 1]
+
+# Print out product of np_baseball and conversion
+print(np_baseball * conversion)
+[[ 75.2303559  168.83775102  23.99      ]
+ [ 75.02614252 231.09732309  35.69      ]
+ [ 73.1544228  215.08167641  31.78      ]
+ ...
+ [ 76.09349925 209.23890778  26.19      ]
+ [ 75.82285669 172.21799965  32.01      ]
+ [ 73.99484223 203.14402711  28.92      ]]
+[[ 1.8796  81.64656 22.99   ]
+ [ 1.8796  97.52228 34.69   ]
+ [ 1.8288  95.25432 30.78   ]
+ ...
+ [ 1.905   92.98636 25.19   ]
+ [ 1.905   86.18248 31.01   ]
+ [ 1.8542  88.45044 27.92   ]]
+
+# we can create arrays/lists that we can use to calculate across another array
+
+import numpy as np
+np_baseball = np.array(baseball)
+
+# Print out addition of np_baseball and updated
+(np_baseball) + (updated)
+print(np_baseball + updated)
+
+# Create numpy array: conversion
+conversion = [0.0254, 0.453592, 1]
+
+# Print out product of np_baseball and conversion
+print(np_baseball * conversion)
+
+# NumPy: Basic Statistics
+# finding the average height of these 5000 people using NumPy's mean function
+np.mean(np_city[:,0])
+1.7472
+np.median(np_city[:,0])
+1.75
+np.corrcoef(np_city[:,0], np_city[:,1])
+np.std(np_city[:,0])
+0.1992
+
+# because NumPy enforces a single data type in an array, it can drastically speed up the calculations
+# Generate data
+# arguments for np.random.normal()
+         # distribution mean
+         # distribution standard deviation
+         # number of samples
+height = np.round(np.random.normal(1.75, 0.20, 5000), 2)
+weight = np.round(np.random.normal(60.32, 15, 5000), 2)
+np_city = np.column_stack((height, weight))
+
+import numpy as np
+
+# Create np_height_in from np_baseball
+np_height_in = np_baseball[:,0]
+print(np_height_in)
+
+# Print out the mean of np_height_in
+print(np.mean(np_height_in))
+
+# Print out the median of np_height_in
+print(np.median(np_height_in))
+[7.4e+04 7.4e+01 7.2e+01 ... 7.5e+01 7.5e+01 7.3e+01]
+1586.4610837438424
+74.0
+
+avg = np.mean(np_baseball[:,0])
+print("Average: " + str(avg))
+Average: 73.6896551724138
+# Print median height
+med = np.median(np_baseball[:,0])
+print("Median: " + str(med))
+Median: 74.0
+# Print out the standard deviation on height
+stddev = np.std(np_baseball[:,0])
+print("Standard Deviation: " + str(stddev))
+Standard Deviation: 2.312791881046546
+# Print out correlation between first and second column
+corr = np.corrcoef(np_baseball[:,0], np_baseball[:,1])
+print("Correlation: " + str(corr))
+Correlation: [[1.         0.53153932]
+ [0.53153932 1.        ]]
