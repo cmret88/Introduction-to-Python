@@ -611,3 +611,72 @@ array([[1.73, 1.68, 1.71, 1.89, 1.79],    0
 np_2d[:, 1:3]
 array([[1.68, 1.71],
        [59.2, 63.6]])
+
+import numpy as np
+
+baseball = [[180, 78.4],
+            [215, 102.7],
+            [210, 98.5],
+            [188, 75.2]]
+
+# Create a 2D numpy array from baseball: np_baseball
+np_baseball = np.array(baseball)
+
+# Print out the type of np_baseball
+print(type(np_baseball))
+
+# Print out the shape of np_baseball
+print(np_baseball.shape)
+<class 'numpy.ndarray'>
+(4, 2)
+
+import numpy as np
+
+# Create a 2D numpy array from baseball: np_baseball
+np_baseball = np.array(baseball)
+
+# Print out the shape of np_baseball
+print(np_baseball.shape)
+(1015, 2)
+
+# Subsetting 2D NumPy Arrays
+# if the 2D numpy array has a regular structure (each row and column has a fixed # of values) subsetting becomes easy.
+# indexes before the comma refer to the rows, while those after the comma refer to the columns
+# the : is for slicing; this this example, it tells Python to include all rows
+import numpy as np
+np_x = np.array(x)
+np_x[:, 0]
+
+import numpy as np
+np_baseball = np.array(baseball)
+
+# Print out the 50th row of np_baseball
+print(np_baseball[49,:])
+
+# Select the entire second column of np_baseball: np_weight_lb
+np_weight_lb = (np_baseball[:,1])
+print(np_weight_lb)
+
+# Print out height of 124th player
+print(np_baseball[123])
+[ 70 195]
+[180 215 210 ... 205 190 195]
+[ 75 200]
+
+# both of these print out the 50th row ([ 70 195]) of np_baseball 
+print(np_baseball[49,:])
+print(np_baseball[49])
+
+# Select the entire second column of np_baseball: np_weight_lb
+# recall that the shape of np_baseball is 1015 rows and 2 columns
+np_weight_lb = (np_baseball[:,1])
+print(np_weight_lb)
+[180 215 210 ... 205 190 195]
+
+# note that below doesn't yield a result
+np_weight_lb_2 = (np_baseball[,1])
+print(np_weight_lb_2)
+  File "<script.py>", line 1
+    np_weight_lb_2 = (np_baseball[,1])
+                                  ^
+SyntaxError: invalid syntax
